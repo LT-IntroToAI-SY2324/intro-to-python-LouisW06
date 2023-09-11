@@ -17,3 +17,9 @@ assert fizbuzz(5) == "Buzz", "fizzbuzz 5 test"
 assert fizbuzz(6) == "Fizz", "fizzbuzz 6 test"
 assert fizbuzz(15) == "FizzBuzz", "fizzbuzz 15 test"
 
+print(fizbuzz(3))
+
+list = ["Chicken", "Hydrolic Press", "Lebron James", "Gynocolgist", "Dark Matter"]
+print(list)
+#print(list.reverse())
+print(list[1:4])
