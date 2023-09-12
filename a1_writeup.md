@@ -14,10 +14,12 @@ Mr. Berg will look at all your files to determine what you have completed.  If t
 
 1. What is your initial thoughts about the python programming language?
 
-
+So far, I think that python is much simpler and more user friendly that swift was. It i not as complicated and I find it easier to learn.
 
 2. Describe some similarities and differences that you found between python and other programming languages you have used in the past?
 
-
+Swift had a lot more things you had to do to make code work and it was really finnicky. Ex. In swift you have to use parenthesis for loops and stuff but here you can just do indentations and it is much less confusing.
 
 3. What are some things that you learned through this assignment?
+
+I feel like I learned a lot of the basics through this assignment, like structures, lists, and simple commands like print. I am excited to delve further into python and do more complicated things.
