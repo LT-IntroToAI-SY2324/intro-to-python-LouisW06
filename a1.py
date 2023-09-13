@@ -64,15 +64,15 @@ def every_other(lst: List[T]) -> List[T]:
 
 
 def sum_list(lst: List[int]) -> int:
-    """Takes a list of numbers, and returns the sum of the numbers in that list. Cannot
-    use the built in function `sum`.
+    #Takes a list of numbers, and returns the sum of the numbers in that list. Cannot
+    #use the built in function `sum`.
 
-    Args:
-        lst - a list of numbers
+    #Args:
+     #   lst - a list of numbers
 
-    Returns:
-        the sum of the passed in list
-    """
+    #Returns:
+     #   the sum of the passed in list
+
     lst; list[1, 2, 3, 4]
     return lst[:]
 
@@ -85,7 +85,9 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
-    raise NotImplementedError("mean")
+    if not lst:
+        return 0
+    return sum_list(lst) / len(lst) if lst else 0
 
 
 def median(lst: List[int]) -> float:
@@ -100,7 +102,12 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    raise NotImplementedError("median")
+    if len(lst) % 2 == 1:
+        return(lst[len(lst)] // 2)
+    else:
+        el1 = lst[len(lst)//2]
+        el2 = lst[len(lst)//2 - 1]
+        return (el1 + el2) / 2
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
@@ -122,7 +129,27 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
-    raise NotImplementedError("duck_duck_goose")
+    i = 0
+    current = "duck1"
+    while len(lst) != 2:
+        if current == "duck1":
+            current = "duck2"
+            i = i + 1
+        elif current == "duck2":
+            current = "goose"
+            i = i + 1
+        elif current == "goose":
+            current = "duck1"
+            lst = lst[:i] + lst[i + 1:]
+            print(lst)
+            i += 1
+            #or lst.pop(i)
+        if i >= len(lst):
+            i -= len(lst)
+            #or i %= len(lst)
+    return lst
+            
+
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
@@ -137,6 +164,7 @@ if __name__ == "__main__":
     assert sum_list([1, 2, 3]) == 6, "sum_list of [1,2,3] failed"
     assert mean([1, 2, 3, 4, 5]) == 3, "mean of [1,2,3,4,5] failed"
     assert median([1, 2, 3, 4, 5]) == 3, "median of [1,2,3,4,5] failed"
+    assert median([1, 2, 3, 4, 5, 6]) == 3.5
 
     names = ["roscoe", "kim", "woz", "solin", "law", "remess"]
     assert duck_duck_goose(names) == ["roscoe", "law"]
